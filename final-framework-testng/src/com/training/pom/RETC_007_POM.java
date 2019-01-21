@@ -26,7 +26,7 @@ public class RETC_007_POM {
 
 		action.moveToElement(element).build().perform();
 
-		driver.findElement(By.linkText("a")).click();
+		driver.findElement(By.linkText("prestige")).click();
 
 	}
 
