@@ -26,7 +26,7 @@ public class DriverFactory {
 			
 		}else if(driverName.equals(DriverNames.FIREFOX)){
 			System.setProperty(Driver.FIREFOX, Driver.FIREFOX_PATH);
-			driver = new FirefoxDriver();
+			//driver = new FirefoxDriver();
 			
 		}else if(driverName.equals("IE")){
 			// TODO 
