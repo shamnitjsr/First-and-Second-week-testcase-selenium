@@ -47,7 +47,7 @@ public class RETC_007_Tests {
 	@AfterMethod
 	public void tearDown() throws Exception {
 		Thread.sleep(5000);
-		driver.quit();
+		//driver.quit();
 	}
 
 	@Test
@@ -61,8 +61,8 @@ public class RETC_007_Tests {
 				"searching a flat in bangalore and provide me rent and how much advanced need to pay?");
 
 		user_question_POM.sendClick();
-		user_question_POM.getMailSended();
-		user_question_POM.getMailSended();
+		
+		//user_question_POM.getMailSended();
 
 		String actual_msg = driver.findElement(
 				By.xpath("//DIV[@class='wpcf7-response-output wpcf7-display-none wpcf7-mail-sent-ok'][text()"

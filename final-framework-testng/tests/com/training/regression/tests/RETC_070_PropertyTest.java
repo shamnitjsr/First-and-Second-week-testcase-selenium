@@ -1,4 +1,4 @@
-package com.training.sanity.tests;
+package com.training.regression.tests;
 
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -11,16 +11,15 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import com.training.generics.ScreenShot;
-
-import com.training.pom.RETC_036_POM;
+import com.training.pom.RETC_070_Property_POM;
 import com.training.utility.DriverFactory;
 import com.training.utility.DriverNames;
 
-public class RETC_036_Tests {
+public class RETC_070_PropertyTest {
 
 	private WebDriver driver;
 	private String baseUrl;
-	private RETC_036_POM rETC_036_POM;
+	private RETC_070_Property_POM rETC_070_Property_POM;
 	private static Properties properties;
 	private ScreenShot screenShot;
 
@@ -34,7 +33,7 @@ public class RETC_036_Tests {
 	@BeforeMethod
 	public void setUp() throws Exception {
 		driver = DriverFactory.getDriver(DriverNames.CHROME);
-		rETC_036_POM = new RETC_036_POM(driver);
+		rETC_070_Property_POM = new RETC_070_Property_POM(driver);
 		baseUrl = properties.getProperty("baseURL");
 		screenShot = new ScreenShot(driver);
 		// open the browser
@@ -49,19 +48,25 @@ public class RETC_036_Tests {
 
 	@Test
 	public void validLoginTest() throws InterruptedException {
-		//.click villas menu tab.
-		rETC_036_POM.clickVillasTab();
-		rETC_036_POM.sendSearchTesxt("Nullam hendrerit apartment");
+		rETC_070_Property_POM.clickLogin_resgister_Btn();
+		rETC_070_Property_POM.sendUserName("admin");
+		rETC_070_Property_POM.sendPassword("admin@123");
+		rETC_070_Property_POM.click_signin_Btn();
+		rETC_070_Property_POM.click_property_link();
+		rETC_070_Property_POM.click_feature_link();
+		
+		rETC_070_Property_POM.sendTagName("New Launches11");
+		rETC_070_Property_POM.sendTag_slug("launch1");
+		rETC_070_Property_POM.sendTag_description("New Launches of villas, apartments, flats");
+		rETC_070_Property_POM.clickAddNew();
+		rETC_070_Property_POM.clickAddNew_link();
+		rETC_070_Property_POM.sendTitle("prestige");
+		rETC_070_Property_POM.sendContent("home town");
+		rETC_070_Property_POM.click_newlaunch_checkbox();
+		rETC_070_Property_POM.click_public_btn();
+		rETC_070_Property_POM.click_logout();
 		Thread.sleep(5000);
-		rETC_036_POM.clickSearchedElement();
-		Thread.sleep(5000);
-		rETC_036_POM.clickDropLink();
-		Thread.sleep(5000);
-		rETC_036_POM.sendYourName("selenium");
-		rETC_036_POM.sendEmail("selenium@gmail.com");
-		rETC_036_POM.sendSubject("apartment");
-		rETC_036_POM.sendMessage("looking for apartment");
-		rETC_036_POM.clickSendBtn();
+		rETC_070_Property_POM.click_alert();
 
 		screenShot.captureScreenShot("First");
 	}

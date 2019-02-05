@@ -15,6 +15,7 @@ public class RETC_007_POM {
 		PageFactory.initElements(driver, this);
 	}
 
+	//1.Click the Apartment menu table and mousehover the prestige linktext.
 	@FindBy(xpath = "(//A[@title=''])[4]")
 	private WebElement click_appartment;
 
@@ -30,6 +31,7 @@ public class RETC_007_POM {
 
 	}
 
+	//2.Enter you name 
 	@FindBy(name = "your-name")
 	private WebElement yourName;
 
@@ -38,6 +40,7 @@ public class RETC_007_POM {
 		this.yourName.sendKeys(userName);
 	}
 
+	//3.Enter your Email.
 	@FindBy(name = "your-email")
 	private WebElement yourEmail;
 
@@ -46,6 +49,7 @@ public class RETC_007_POM {
 		this.yourEmail.sendKeys(email);
 	}
 
+	//4.Enter your Subject.
 	@FindBy(name = "your-subject")
 	private WebElement your_Subject;
 
@@ -54,6 +58,7 @@ public class RETC_007_POM {
 		this.your_Subject.sendKeys(subject);
 	}
 
+	//5.Enter your Message.
 	@FindBy(name = "your-message")
 	private WebElement your_Message;
 
@@ -62,6 +67,7 @@ public class RETC_007_POM {
 		this.your_Message.sendKeys(message);
 	}
 
+	//6.Click the Send button
 	@FindBy(xpath = "//*[@id=\"wpcf7-f4-o1\"]/form/p[5]/input")
 	private WebElement click_send;
 
@@ -70,13 +76,15 @@ public class RETC_007_POM {
 		this.click_send.click();
 	}
 
+	/*
 	@FindBy(xpath = "//*[@id=\"wpcf7-f4-o1\"]/form/div[2]")
 	public WebElement getSuccessMessage;
 
 	public void getMailSended() throws InterruptedException {
 
-		String s1 = getSuccessMessage.getText();
+		String s1 = getSuccessMessage.getText(); 
 
 	}
 
+*/
 }

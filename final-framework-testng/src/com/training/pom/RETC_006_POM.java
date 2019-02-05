@@ -13,6 +13,7 @@ public class RETC_006_POM {
 		PageFactory.initElements(driver, this);
 	}
 
+	// 1.click LOGIN/REGISTER button
 	@FindBy(xpath = "//*[@id=\"responsive\"]/li[8]/a")
 	private WebElement loginregister_button_click;
 
@@ -20,6 +21,7 @@ public class RETC_006_POM {
 		this.loginregister_button_click.click();
 	}
 
+	// 2.Send the User name
 	@FindBy(id = "user_login")
 	private WebElement userName;
 
@@ -28,6 +30,7 @@ public class RETC_006_POM {
 		this.userName.sendKeys(userName);
 	}
 
+	// 3.Send the  Password
 	@FindBy(id = "user_pass")
 	private WebElement password;
 
@@ -36,6 +39,7 @@ public class RETC_006_POM {
 		this.password.sendKeys(password);
 	}
 
+	// 4.Click Login button
 	@FindBy(name = "login")
 	private WebElement signin_button_click;
 
@@ -45,6 +49,7 @@ public class RETC_006_POM {
 
 	}
 
+	// 4.Click User Menu button
 	@FindBy(xpath = "//*[@id=\"post-133\"]/div[1]/div/div/ul[2]/li[2]/a")
 	private WebElement usermenu_button_click;
 

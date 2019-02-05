@@ -19,9 +19,14 @@ public class LoginDataProviders {
 		Object[][] result = new Object[list.size()][]; 
 		int count = 0; 
 		for(LoginBean temp : list){
-			Object[]  obj = new Object[2]; 
-			obj[0] = temp.getUserName(); 
-			obj[1] = temp.getPassword(); 
+			Object[]  obj = new Object[4]; 
+			//obj[0] = temp.getName(); 
+			//obj[1] = temp.getPassword();
+			
+			obj[0] = temp.getYourName(); 
+			obj[1] = temp.getEmail(); 
+			obj[2] = temp.getSubject(); 
+			obj[3] = temp.getMessage(); 
 			
 			result[count ++] = obj; 
 		}
@@ -30,15 +35,28 @@ public class LoginDataProviders {
 		return result;
 	}
 	
-	@DataProvider(name = "excel-inputs")
-	public Object[][] getExcelData(){
-		String fileName ="C:/Users/Naveen/Desktop/Testing.xlsx"; 
+	@DataProvider(name = "excel-inputs66")
+	public Object[][] getExcelData66(){
+		String fileName ="C:\\selenium_setup_file\\mydata66.xlsx"; 
+		return new ApachePOIExcelRead().getExcelContent(fileName); 
+	} 
+	
+
+	@DataProvider(name = "excel-inputs68")
+	public Object[][] getExcelData68(){
+		String fileName ="C:\\selenium_setup_file\\mydata68.xlsx"; 
 		return new ApachePOIExcelRead().getExcelContent(fileName); 
 	}
 	
+	@DataProvider(name = "excel-inputs69")
+	public Object[][] getExcelData69(){
+		String fileName ="C:\\selenium_setup_file\\mydata69.xlsx"; 
+		return new ApachePOIExcelRead().getExcelContent(fileName); 
+	}
+	/*
 	@DataProvider(name = "xls-inputs")
 	public Object[][] getXLSData(){
 		// ensure you will have the title as first line in the file 
 		return new ReadExcel().getExcelData("C:/Users/Naveen/Desktop/Testing.xls", "Sheet1"); 
-	}
+	}*/
 }

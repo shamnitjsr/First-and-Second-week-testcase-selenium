@@ -13,26 +13,60 @@ public class LoginPOM {
 		PageFactory.initElements(driver, this);
 	}
 	
-	@FindBy(id="login")
-	private WebElement userName; 
+	@FindBy(linkText="VILLAS")
+	private WebElement click_villas; 
 	
-	@FindBy(id="password")
-	private WebElement password;
-	
-	@FindBy(id="formLogin_submitAuth")
-	private WebElement loginBtn; 
-	
-	public void sendUserName(String userName) {
-		this.userName.clear();
-		this.userName.sendKeys(userName);
+	public void clickVillasTab() {
+		this.click_villas.click(); 
 	}
 	
-	public void sendPassword(String password) {
-		this.password.clear(); 
-		this.password.sendKeys(password); 
+	@FindBy(linkText="Drop Us a Line")
+	private WebElement click_drop_us_a_line; 
+	
+	public void clickDrop_us_a_line() {
+		this.click_drop_us_a_line.click(); 
 	}
 	
-	public void clickLoginBtn() {
-		this.loginBtn.click(); 
+	
+	
+
+	@FindBy(xpath="//*[@id=\"wpcf7-f119-p134-o1\"]/form/div[2]/div[1]/div/span/input")
+	private WebElement yourName;
+	
+	public void sendYourName(String yName) {
+		this.yourName.clear();
+		this.yourName.sendKeys(yName);
+	}
+	
+	
+	@FindBy(xpath="//*[@id=\"wpcf7-f119-p134-o1\"]/form/div[2]/div[2]/div/span/input")
+	private WebElement Email;
+	
+	public void sendEmail(String email) {
+		this.Email.clear();
+		this.Email.sendKeys(email);
+	}
+	
+	@FindBy(xpath="//*[@id=\"wpcf7-f119-p134-o1\"]/form/div[2]/div[3]/div/span/input")
+	private WebElement Subject;
+	
+	public void sendSubject(String subject) {
+		this.Subject.clear();
+		this.Subject.sendKeys(subject);
+	}
+	
+	@FindBy(name="id:comments")
+	private WebElement Message;
+	
+	public void sendMesssage(String subject) {
+		this.Message.clear();
+		this.Message.sendKeys(subject);
+	}
+	
+	@FindBy(xpath="//*[@id=\"wpcf7-f119-p134-o1\"]/form/p/input")
+	private WebElement click_send_btn; 
+	
+	public void clickSendbtn() {
+		this.click_send_btn.click(); 
 	}
 }
